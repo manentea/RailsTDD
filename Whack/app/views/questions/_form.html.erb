@@ -1,0 +1,16 @@
+<div class="question-form">
+	<%= form_for(@question) do |f| %>
+		<div class="field q-title">
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title %>
+	  </div>
+  	<div class="field q-body">
+      <%= f.label :body %><br>
+      <%= f.text_field :body %>
+    </div>
+		<div class="action q-submit">
+			<%= f.submit %>
+		</div>
+
+	<% end %>
+</div>

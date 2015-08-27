@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whack</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header>
+		<div class="inner-header">
+			<%= render 'layouts/header' %>
+		</div>
+	</header>
+
+	<div class="main">
+		<div class="inner-main">
+			<%= yield %>
+		</div>
+	</div>
+
+	<footer>
+		<div class="inner-footer">
+
+		</div>
+	</footer>
+
+</body>
+</html>

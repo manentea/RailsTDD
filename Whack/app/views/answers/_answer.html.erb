@@ -1,0 +1,17 @@
+<div class='answer_partial'>
+  <%= render partial: 'votes/ansnew', locals: {question: answer.question, answer: answer} %>
+  <p><%= answer.body %></p>
+
+    <ol>
+      <% answer.comments.each do |c| %>
+        <li><%= render partial: 'comments/comment', locals: {comment: c} %></li>
+      <% end %>
+    </ol>
+  <div class="links">
+    <%= link_to 'new comment', new_question_answer_comment_path(answer.question, answer)  %>
+    <% if session[:user_id] == answer.user_id %>
+      <%= link_to 'edit', edit_question_answer_path(answer.question, answer)  %>
+      <%= link_to 'delete', answer, method: :delete, data: { confirm: 'sure?'} %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="all-comments">
+	
+	<% @comments.each do |c| %>
+		<%= render partial: 'comment', locals: {comment: c} %>
+	<% end %>
+	
+</div>

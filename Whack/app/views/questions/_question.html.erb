@@ -1,0 +1,20 @@
+<div class="question-partial">
+
+  <%= render partial: 'votes/questnew', locals: {question: @question} %>
+  <h2 class='question_title'><%= question.title %></h2>
+  <br>
+  <br>
+  <h5><%= question.body %></h5>
+
+  <% comments.each do |c| %>
+    <%= render partial: 'comments/comment', locals: {comment: c} %>
+  <% end %>
+  <div class="links">
+  	<%= link_to 'new comment', new_question_comment_path(question)  %>
+  	<% if session[:user_id] == question.user_id %>
+      <%= link_to 'edit', edit_question_path(question)  %>
+      <%= link_to 'delete', question, method: :delete, data: { confirm: 'sure?'} %>
+    <% end %>
+  </div>
+</div>
+

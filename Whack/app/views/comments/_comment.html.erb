@@ -1,0 +1,12 @@
+<div class="comment-partial">
+
+	<div><%= comment.body %></div>
+  <br>
+  <div>posted by <%= comment.user.name %></div>
+
+
+  <% if comment.user_id == session[:user_id] %>
+	 <%= link_to 'edit comment', edit_comment_path(comment) %>
+  <% end %>
+
+</div>

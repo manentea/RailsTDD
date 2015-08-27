@@ -1,0 +1,16 @@
+<h1>comments edit</h1>
+
+
+<div class="comment-form">
+	<%= form_for @comment, as: :get, url: edit_comment_path(@comment) do |f| %>
+
+  	
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    
+		
+			<%= f.submit %>
+		
+
+	<% end %>
+</div>

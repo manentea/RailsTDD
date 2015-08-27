@@ -1,0 +1,14 @@
+<div class='block'>
+  <div class='question_partial'>
+    <%= render partial: 'question', locals: {question: @question,
+    																				comments: @question.comments}  %>
+  <div><h1>Answers: </h1></div>
+    <ol>
+      <% @question.sorted_answers.each do |a| %>
+        <li><%= render partial: 'answers/answer', locals: {answer: a} %></li>
+      <% end %>
+    </ol>
+  </div>
+  <% @answer = Answer.new %>
+  <%= render partial: 'answers/form', locals: {answer: @answer, question: @question}  %>
+</div>

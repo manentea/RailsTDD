@@ -1,0 +1,9 @@
+<div class="user_show">
+  <h2><%= @user.name %></h2>
+
+  <% @user.questions.each do |question| %>
+
+    <div class='question_link'><%= link_to question.title, question_path(question)  %></div>
+  <% end %>
+  <div><%= link_to 'New Question', new_question_path  %></div>
+</div>

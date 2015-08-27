@@ -1,0 +1,7 @@
+<div class="list-users">
+  <% if @questions %>
+    <% @questions.each do |question| %>
+      <p class='q-list'><%= link_to question.title, question_path(question)  %></p>
+    <% end %>
+  <% end %>
+</div>
