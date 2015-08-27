@@ -1,4 +1,3 @@
-
 class QuestionsController < ApplicationController
 
 
@@ -8,7 +7,7 @@ class QuestionsController < ApplicationController
 
 	def show
 		@question = Question.includes(:comments, :answers).find(params[:id])
-		@question_answers = Answers.
+		# @question_answers = Answers.where(:question_id == @question.id)
 	end
 
 	def new
